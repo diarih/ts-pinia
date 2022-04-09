@@ -21,7 +21,7 @@ export const useAuthStore = defineStore({
             if (email === 'name@email.com' && password === '1234') {
                 this.loggedIn = true;
                 this.user = {
-                    name: 'John Doe',
+                    name: 'Kipli',
                     email,
                 };
 
