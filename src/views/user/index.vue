@@ -4,24 +4,12 @@ import { useUserStore } from '@/stores/user';
 import { storeToRefs } from 'pinia';
 import { onMounted } from 'vue';
 
-// const user = useUserStore();
-
-// const { users } = user;
-
-// onMounted(() => {
-//     user.fetch();
-// });
-
-
 const user = useUserStore();
-// const { users } = storeToRefs(user);
-const { fetch } = user;
 onMounted(() => {
   user.fetch();
 });
 
-
-
+console.log(user.loading);
 
 
 </script>
@@ -30,7 +18,9 @@ onMounted(() => {
     <div class="container mt-4">
         <h1>User List</h1>
 
-        <table class="table table-light table-borderless mt-4">
+        <div class="fs-1 fw-bold mt-4" v-if="user.loading">Loading...</div>
+
+        <table class="table table-light table-borderless mt-4" v-else>
             <thead>
                 <tr>
                     <th>id</th>
