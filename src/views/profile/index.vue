@@ -5,12 +5,12 @@ import { useRouter } from 'vue-router';
 
 
 const auth = useAuthStore()
-const router = useRouter();
+// const router = useRouter();
 
-const logout = () => {
-  auth.logout();
-  router.push('/');
-};
+// const logout = () => {
+//   auth.logout();
+//   router.push('/');
+// };
 
 </script>
 
@@ -21,6 +21,6 @@ const logout = () => {
         <div>Name: {{ auth.user?.name }}</div>
         <div>Email: {{ auth.user?.email }}</div>
 
-        <button class="mt-4 btn btn-danger" @click="logout">Logout</button>
+        <button class="mt-4 btn btn-danger" @click="auth.logout">Logout</button>
     </div>
 </template>

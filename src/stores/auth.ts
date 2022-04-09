@@ -1,4 +1,5 @@
 import { defineStore } from 'pinia';
+import router from '../router';
 
 type user = {
     name: string;
@@ -9,6 +10,7 @@ type auth = {
     loggedIn: boolean;
     user: user | null;
 }
+
 
 export const useAuthStore = defineStore({
     id: 'auth',
@@ -32,6 +34,7 @@ export const useAuthStore = defineStore({
         logout() {
             this.loggedIn = false;
             this.user = null;
+            router.push('/login')
         }
     }
 })
